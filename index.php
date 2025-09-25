@@ -21,12 +21,7 @@
             <h1>99</h1>
         </div>
         <div id="bottomSide">
-            <h1>Lista på Uppgifter</h1>
-            <h2>bla bla</h2>
-            <h2 style="text-decoration: line-through;">Slå en etta med en gurka</h2>
-            <h2 style="text-decoration: line-through;">5 armhävningar under lektion</h2>
-            <h2 style="text-decoration: line-through;">äta en hel tårta</h2>
-
+            <?php include_once 'Table.php'; ?>
         </div>
     </div>
 </body>
