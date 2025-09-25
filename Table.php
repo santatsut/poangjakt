@@ -13,9 +13,9 @@
   foreach ($List[1] as $row) {
       $style = $row['avklarad'] ? 'text-decoration: line-through;' : '';
       echo '<tr style="'.$style.'">';
-      echo '<td>'.htmlspecialchars($row['Uppgift']).'</td>';
-      echo '<td>'.htmlspecialchars($row['Poäng']).'p</td>';
-      echo '<td>'.htmlspecialchars($row['lag']).'</td>';
+      echo '<td>'.$row['Uppgift'].'</td>';
+      echo '<td>'.$row['Poäng'].'p</td>';
+      echo '<td>'.$row['lag'].'</td>';
       echo '</tr>';
   }
   ?>
