@@ -10,7 +10,7 @@
   $List = json_decode($json, true); // decode as associative array
 
   // Loop through rows
-  foreach ($List as $row) {
+  foreach ($List[1] as $row) {
       $style = $row['avklarad'] ? 'text-decoration: line-through;' : '';
       echo '<tr style="'.$style.'">';
       echo '<td>'.htmlspecialchars($row['Uppgift']).'</td>';

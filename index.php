@@ -12,14 +12,7 @@
         <p>Detta är Poängen just nu</p>
     </div>
     <div id="content">
-        <div id="leftSide">
-            <h2>Teknik</h2>
-            <h1>100</h1>
-        </div>
-        <div id="rightSide">
-            <h2>Estet</h2>
-            <h1>99</h1>
-        </div>
+        <?php include_once 'Progress.php'; ?>
         <div id="bottomSide">
             <?php include_once 'Table.php'; ?>
         </div>
