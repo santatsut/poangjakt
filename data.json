@@ -1,0 +1,22 @@
+[
+    {
+        "Uppgift" : "Blabla",
+        "Poäng" : 100,
+        "lag" : "Estet"
+    },
+    {
+        "Uppgift" : "Blabla",
+        "Poäng" : 200,
+        "lag" : "Teknik"
+    },
+    {
+        "Uppgift" : "Blabla",
+        "Poäng" : 50,
+        "lag" : "Estet"
+    },
+    {
+        "Uppgift" : "Blabla",
+        "Poäng" : 10,
+        "lag" : "teknik"
+    }
+]
