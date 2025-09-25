@@ -2,21 +2,28 @@
     {
         "Uppgift" : "Blabla",
         "Poäng" : 100,
-        "lag" : "Estet"
+        "lag" : "Estet",
+        "avklarad" : false
     },
     {
         "Uppgift" : "Blabla",
         "Poäng" : 200,
-        "lag" : "Teknik"
+        "lag" : "Teknik",
+        "avklarad" : true
+
     },
     {
         "Uppgift" : "Blabla",
         "Poäng" : 50,
-        "lag" : "Estet"
+        "lag" : "Estet",
+        "avklarad" : false
+
     },
     {
         "Uppgift" : "Blabla",
         "Poäng" : 10,
-        "lag" : "teknik"
+        "lag" : "teknik",
+        "avklarad" : false
+
     }
 ]
