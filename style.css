@@ -47,6 +47,9 @@
     text-align: center;
     color: rgb(0, 0, 0);
 }
+table{
+width: 400px;
+}
 td{
     text-decoration: var(--Done);
 }

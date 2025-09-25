@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th>Uppgift</th>
-    <th>Poäng</th>
-    <th>Lag</th>
+    <th>Uppgift </th>
+    <th>Poäng </th>
+    <th>Lag </th>
   </tr>
   <?php
   // Read file contents
