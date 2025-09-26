@@ -1,36 +1,13 @@
 [
-    [{"Name" : "Estet","Poäng" : 0},{"Name" : "Teknik","Poäng" : 0}],
-
-
     [
         {
-            "Uppgift" : "Blabla",
-            "Poäng" : 100,
-            "lag" : "Estet",
-            "avklarad" : false
+            "Name": "Es",
+            "Poäng": 0
         },
         {
-            "Uppgift" : "Blabla",
-            "Poäng" : 200,
-            "lag" : "Teknik",
-            "avklarad" : true
-    
-        },
-        {
-            "Uppgift" : "Blabla",
-            "Poäng" : 50,
-            "lag" : "Estet",
-            "avklarad" : false
-    
-        },
-        {
-            "Uppgift" : "Blabla",
-            "Poäng" : 10,
-            "lag" : "teknik",
-            "avklarad" : false
-    
+            "Name": "Te",
+            "Poäng": 0
         }
-    ]
+    ],
+    []
 ]
-
-

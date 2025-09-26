@@ -44,7 +44,10 @@ body{
 
 #bottomSide {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
     font-size: 2em;
     width: 100%;
     margin-top: 20px;
@@ -61,4 +64,25 @@ width: 400px;
 }
 td{
     text-decoration: var(--Done);
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+button h1 ,input{
+    field-sizing:content;
+    width: auto;
+    min-width: 100px;
+    height: auto;
+    color: white;
+    background-color: var(--SecColor);
+    padding: 5px;
+    border-radius: 5px;
+
+}
+.Submitter{
+    padding: 10px;
+    border-radius: 25px;
 }
