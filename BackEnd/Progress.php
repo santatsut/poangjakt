@@ -1,6 +1,7 @@
 <?php
-$json = file_get_contents('data.json');
-$List = json_decode($json, true); // decode as associative array
+$jsonPath = __DIR__.'/data.json';
+$json = file_get_contents($jsonPath);
+$List = json_decode($json, true) ?: []; // decode as associative array
 ?>
 
 

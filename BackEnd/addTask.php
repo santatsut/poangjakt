@@ -1,6 +1,7 @@
 <?php
 
-$json = file_get_contents('data.json') ?: '[]';
+$path = 'data.json';
+$json = file_get_contents($path) ?: '[]';
 $List = json_decode($json, true) ?: [];
 
 if (isset($_POST['addTask'])) {
@@ -13,5 +14,5 @@ if (isset($_POST['addTask'])) {
     ];
 
     $List[1][] = $Task;
-    file_put_contents('data.json', json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    file_put_contents($path, json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }

@@ -1,26 +1,37 @@
 <?php
 
-$json = file_get_contents('data.json');
+$jsonPath = __DIR__.'/data.json';
+$json = file_get_contents($jsonPath);
+$List = json_decode($json, true) ?: []; // decode as associative array
 
-$myfile = fopen('data.json', 'w');
-$List = json_decode($json, true); // decode as associative array
 function GetValues(&$List, $type)
 {
     $Poäng = 0;
-    foreach ($List[1] as &$row) {
-        if ($row['avklarad'] == true && (string) $row['lag'] === $type && $row['Checked'] == false) {
-            echo 'hi';
 
-            $Poäng += $row['Poäng'];
+    foreach ($List as &$row) { // loop all tasks
+        if (
+            !empty($row['avklarad'])
+            && (string) ($row['lag'] ?? '') === $type
+            && empty($row['Checked'])
+        ) {
+            $Poäng += (int) ($row['Poäng'] ?? 0);
             $row['Checked'] = true;
         }
     }
 
     return [$Poäng, $List];
 }
-[$P,$List] = GetValues($List, 'Es');
-$List[0][0]['Poäng'] += $P;
-[$P,$List] = GetValues($List, 'Te');
-$List[0][1]['Poäng'] += $P;
-file_put_contents('data.json', json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-fclose($myfile);
+
+// Example: Add points to some summary (assuming $List[0] exists)
+[$P, $List] = GetValues($List, 'Es');
+if (isset($List[0][0]['Poäng'])) {
+    $List[0][0]['Poäng'] += $P;
+}
+
+[$P, $List] = GetValues($List, 'Te');
+if (isset($List[0][1]['Poäng'])) {
+    $List[0][1]['Poäng'] += $P;
+}
+
+// Save back to file
+file_put_contents($jsonPath, json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
