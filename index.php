@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script>
+       window.history.replaceState('','','/');
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +11,7 @@
 </head>
 
 <body>
-    <?php include_once 'SetPoints.php'; ?>
+    <?php include_once './BackEnd/SetPoints.php'; ?>
 
     <div id="navbar">
         <h1>Poäng Jakt</h1>
@@ -17,17 +19,10 @@
     </div>
     <div id="content">
 
-        <?php include_once 'Progress.php'; ?>
+        <?php include_once './BackEnd/Progress.php'; ?>
+        
         <div id="bottomSide">
-            <form method="post">
-                <input type="text" name="Uppgift" placeholder="Uppgift" id="">
-                <input type="text" name="Poäng" placeholder="Poäng" id="">
-                <input type="text" name="Lag" placeholder="Lag" id="">
-                <input type="submit" name="addTask" class="Submitter" value="Lägg Till Uppgift">
-            </form>
-            <?php include_once 'addTask.php'; ?>
-
-            <?php include_once 'Table.php'; ?>
+            <?php include_once './BackEnd/Table.php'; ?>
         </div>
     </div>
 </body>
