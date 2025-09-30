@@ -8,7 +8,7 @@ function GetValues(&$List, $type)
 {
     $Poäng = 0;
 
-    foreach ($List as &$row) { // loop all tasks
+    foreach ($List[1] as &$row) { // loop all tasks
         if (
             !empty($row['avklarad'])
             && (string) ($row['lag'] ?? '') === $type

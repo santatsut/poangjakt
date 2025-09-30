@@ -2,7 +2,7 @@
     [
         {
             "Name": "Es",
-            "Poäng": 0
+            "Poäng": 100
         },
         {
             "Name": "Te",
@@ -18,46 +18,11 @@
             "Checked": false
         },
         {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "21312",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "21312",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "21312",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "21312",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "21312",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Bygg en snögubbe",
-            "lag": "Te",
-            "Poäng": "1000",
-            "avklarad": false,
-            "Checked": false
+            "Uppgift": "Bygg ett hus",
+            "lag": "Es",
+            "Poäng": "100",
+            "avklarad": true,
+            "Checked": true
         }
     ]
 ]

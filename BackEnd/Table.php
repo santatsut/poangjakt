@@ -8,7 +8,7 @@
 <?php
 $jsonPath = __DIR__.'/data.json';
 $json = file_get_contents($jsonPath);
-$List = json_decode($json, true) ?: []; // decode as associative array
+$List = json_decode($json, associative: true) ?: []; // decode as associative array
 foreach ($List[1] as $row) {
     $style = !empty($row['avklarad']) ? 'text-decoration: line-through;' : '';
     echo '<tr style="'.$style.'">';
