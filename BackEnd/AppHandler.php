@@ -62,6 +62,7 @@ final class Accounts
     {
         self::$accounts = [
             new Account('adrian', 'TgX42&j!'),
+            new Account('Philart', '1234'),
         ];
     }
 
