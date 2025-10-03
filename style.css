@@ -56,13 +56,13 @@ body{
 }
 
 #leftSide {
-    background-image: url(Web.jpg);
+    background-image: url(./images/Web.jpg);
     background-position: center;
     background-size: cover;
 }
 
 #rightSide {
-    background-image: url(Art.jpg);
+    background-image: url(./images/Art.jpg);
     background-position: center;
     background-size: cover;
 }

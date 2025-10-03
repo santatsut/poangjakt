@@ -12,7 +12,7 @@
     <?php include_once './BackEnd/SetPoints.php'; ?>
 
     <div id="navbar">
-        <img id="logoImage" src="Logo_Black.svg" alt="">
+        <img id="logoImage" src="./images/Logo_Black.svg" alt="">
         <h1>Poäng Jakt</h1>
     </div>
     <div id="content">
