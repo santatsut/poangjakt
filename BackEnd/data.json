@@ -6,7 +6,7 @@
         },
         {
             "Name": "Te",
-            "Poäng": 0
+            "Poäng": 100
         }
     ],
     [
@@ -20,6 +20,13 @@
         {
             "Uppgift": "Bygg ett hus",
             "lag": "Es",
+            "Poäng": "100",
+            "avklarad": true,
+            "Checked": true
+        },
+        {
+            "Uppgift": "Gör 10000 armhävningar",
+            "lag": "Te",
             "Poäng": "100",
             "avklarad": true,
             "Checked": true

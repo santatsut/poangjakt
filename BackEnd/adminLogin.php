@@ -14,13 +14,16 @@ if (isset($_POST['submitAdmin'])) {
     }
 }
 ?>
-
+<link rel="stylesheet" href="Loginpage.css">
 <form method="post">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" name="submitAdmin" value="Login">
+    <h1>Login</h1>
+    <input type="text" name="username" placeholder="Enter username" required>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <?php if (!empty($error)) {
+        echo "<p style='color:red;'>$error</p>";
+    } ?>
+    <input submit type="submit" name="submitAdmin" value="SIGN IN">
+
 </form>
 
-<?php if (!empty($error)) {
-    echo "<p style='color:red;'>$error</p>";
-} ?>
+
