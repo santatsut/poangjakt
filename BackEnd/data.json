@@ -30,6 +30,20 @@
             "Poäng": "100",
             "avklarad": true,
             "Checked": true
+        },
+        {
+            "Uppgift": "Bygg ett hus",
+            "lag": "Es",
+            "Poäng": "100",
+            "avklarad": true,
+            "Checked": true
+        },
+        {
+            "Uppgift": "Gör 10000 armhävningar",
+            "lag": "Es",
+            "Poäng": "100",
+            "avklarad": false,
+            "Checked": false
         }
     ]
 ]

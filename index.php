@@ -12,8 +12,8 @@
     <?php include_once './BackEnd/SetPoints.php'; ?>
 
     <div id="navbar">
+        <img id="logoImage" src="Logo_Black.svg" alt="">
         <h1>Poäng Jakt</h1>
-        <p>Detta är Poängen just nu</p>
     </div>
     <div id="content">
 
