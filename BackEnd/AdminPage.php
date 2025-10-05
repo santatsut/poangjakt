@@ -1,5 +1,3 @@
-<script src="/index.js"></script>
-
 <?php
 include_once 'AppHandler.php';
 if (!App::$IsLoggedIn) {
@@ -7,13 +5,6 @@ if (!App::$IsLoggedIn) {
     exit;
 }
 
-// Handle marking tasks as done
-include_once 'adminHandler.php';
-
-// Handle adding tasks
-if (isset($_POST['addTask'])) {
-    include_once 'addTask.php';
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,54 +13,64 @@ if (isset($_POST['addTask'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="AdminPage.css">
     <title>Poäng Jakt Admin</title>
 </head>
-<nav id="bar"></nav>
 
 <body>
-    
-    <link rel="stylesheet" href="AdminPage.css">
-    <section><aside id="Navigator">
-        <ul Folders>
-            <li selected="true" class="NavigatorFolderItems"><img src="../../images/taskAdd.svg" alt=""></li>
-            <li selected="false" class="NavigatorFolderItems"><img src="../../images/taskRemove.svg" alt=""></li>
-            <li selected="false" class="NavigatorFolderItems"><img src="../../images/member.svg" alt=""></li>
-            <li selected="false" class="NavigatorFolderItems"><img src="../../images/" alt=""></li>
-        </ul>
-    </aside>
+    <nav id="bar"></nav>
 
-    <div id="content">
-        <div id="bottomSide">
-            <form method="post">
-                <input type="text" name="Uppgift" placeholder="Uppgift" required>
-                <input type="text" name="Poäng" placeholder="Poäng" required>
-                <input type="text" name="Lag" placeholder="Lag" required>
-                <input type="submit" name="addTask" value="Lägg Till Uppgift">
-            </form>
+        <aside id="Navigator">
+            <ul id="Folders">
+                <li class="NavigatorFolderItems" data-page="AddTask">
+                    <img src="../../images/taskAdd.svg" alt="Add Task">
+                </li>
+                <li class="NavigatorFolderItems" data-page="RemoveTask">
+                    <img src="../../images/taskRemove.svg" alt="Remove Task">
+                </li>
+                <li class="NavigatorFolderItems" data-page="Members">
+                    <img src="../../images/member.svg" alt="Members">
+                </li>
+                <li class="NavigatorFolderItems" data-page="Other">
+                    <img src="../../images/placeholder.svg" alt="Other">
+                </li>
+            </ul>
+        </aside>
 
-            <?php include_once 'Table.php'; ?>
+ 
+           <div id="content">
+            <div id="bottomSide">
+                <iframe scrolling="no" id="contentFrame" src="" frameborder="0"></iframe>
+            </div>
         </div>
-    </div></section>
-    
+
     <script>
-        loadForm();
+        document.addEventListener("DOMContentLoaded", () => {
+            const folders = document.querySelectorAll(".NavigatorFolderItems");
+            const iframe = document.getElementById("contentFrame");
 
-        document.addEventListener("DOMContentLoaded",()=>{
-            const Folders = document.querySelectorAll(".NavigatorFolderItems")
-            Folders.forEach(element => {
-                element.addEventListener("click",(e)=>{
-                    Folders.forEach(el=>{
-                        if (el.getAttribute("selected") === "true") {
-                            el.setAttribute("selected",false)
-                        }
-                    })
-                        element.setAttribute("selected",true)
-                        
-                })
+            folders.forEach(folder => {
+                folder.addEventListener("click", () => {
+                    // Remove old selection
+                    folders.forEach(el => el.removeAttribute("selected"));
+                    folder.setAttribute("selected", "true");
+
+                    // Start fade-out
+                    iframe.classList.add("hidden");
+
+                    // Wait for fade-out, then change src and fade-in
+                    setTimeout(() => {
+                        const page = folder.getAttribute("data-page");
+                        iframe.src = "AdminPages/" + page + ".php";
+
+                        // Fade-in after content reloads
+                        iframe.onload = () => {
+                            iframe.classList.remove("hidden");
+                        };
+                    }, 300); // match with transition time
+                });
             });
-        })
-
-
+        });
     </script>
 </body>
 

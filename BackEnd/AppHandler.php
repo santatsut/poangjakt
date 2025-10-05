@@ -1,14 +1,18 @@
 <?php
-
+// Start session and output buffering
 session_start();
+ob_start();
 
 final class App
 {
     public static $IsLoggedIn = false;
+    public static $_Redirect = [];
 
     public static function init()
     {
         self::$IsLoggedIn = $_SESSION['IsLoggedIn'] ?? false;
+        self::$_Redirect['ADMIN_PAGE'] = "/BackEnd/AdminPage.php";
+        self::$_Redirect['HOME_PAGE'] = "/PublicPage.php";
     }
 
     public static function login()
@@ -76,11 +80,10 @@ final class Accounts
                 return true;
             }
         }
-
         return false;
     }
 }
 
-// Initialize
+// Initialize static data
 Accounts::init();
 App::init();

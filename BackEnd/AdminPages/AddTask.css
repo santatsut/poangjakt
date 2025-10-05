@@ -1,0 +1,36 @@
+
+#TableForTasks {
+    position: relative;
+    top: 20px;
+    width: 50vw;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+tr{
+    background-color: var(--MainColor);
+}
+
+
+td, th {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 15px;
+}
+
+td{
+    text-decoration: var(--Done);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+#Row:hover{
+    background-color: var(--SecColor);
+    cursor: pointer;
+}
+
+th {
+    background-color: var(--SecColor);
+    font-size: 1.5rem;
+    font-weight:600;
+}

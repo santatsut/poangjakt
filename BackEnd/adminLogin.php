@@ -1,5 +1,3 @@
-<script src="/index.js"></script>
-
 <?php
 include_once 'AppHandler.php';
 
@@ -14,6 +12,8 @@ if (isset($_POST['submitAdmin'])) {
     }
 }
 ?>
+<script src="/index.js"></script>
+
 <link rel="stylesheet" href="Loginpage.css">
 <form method="post">
     <h1>Login</h1>

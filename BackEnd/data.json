@@ -2,11 +2,11 @@
     [
         {
             "Name": "Es",
-            "Poäng": 100
+            "Poäng": 200
         },
         {
             "Name": "Te",
-            "Poäng": 100
+            "Poäng": 200
         }
     ],
     [
@@ -14,8 +14,8 @@
             "Uppgift": "Bygg en snögubbe",
             "lag": "Te",
             "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
+            "avklarad": true,
+            "Checked": true
         },
         {
             "Uppgift": "Bygg ett hus",
@@ -42,8 +42,8 @@
             "Uppgift": "Gör 10000 armhävningar",
             "lag": "Es",
             "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
+            "avklarad": true,
+            "Checked": true
         }
     ]
 ]
