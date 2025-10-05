@@ -1,11 +1,11 @@
 <?php
-include_once 'AppHandler.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/BackEnd/Handlers/AppHandler.php';
 
 if (isset($_POST['submitAdmin'])) {
     $Account = new Account($_POST['username'], $_POST['password']);
     if (Accounts::checkAccount($Account)) {
         App::login();
-        header('Location: AdminPage.php');
+        header('Location: ' . "AdminPage.php");
         exit;
     } else {
         $error = 'Invalid username or password!';
@@ -14,7 +14,7 @@ if (isset($_POST['submitAdmin'])) {
 ?>
 <script src="/index.js"></script>
 
-<link rel="stylesheet" href="Loginpage.css">
+<link rel="stylesheet" href="../css/Loginpage.css">
 <form method="post">
     <h1>Login</h1>
     <input type="text" name="username" placeholder="Enter username" required>

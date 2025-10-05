@@ -11,8 +11,15 @@ final class App
     public static function init()
     {
         self::$IsLoggedIn = $_SESSION['IsLoggedIn'] ?? false;
-        self::$_Redirect['ADMIN_PAGE'] = "/BackEnd/AdminPage.php";
-        self::$_Redirect['HOME_PAGE'] = "/PublicPage.php";
+        $Backend = $_SERVER['DOCUMENT_ROOT'] . "/BackEnd/";
+        self::$_Redirect['ADMIN_PAGE']  = $Backend . "AdminPage.php";
+        self::$_Redirect['HOME_PAGE']   =  "/PublicPage.php";
+        self::$_Redirect['FUNCTIONS']   = $Backend . "functions/";
+        self::$_Redirect['HANDLERS']    = $Backend . "Handlers/";
+        self::$_Redirect['PAGES']       = $Backend . "Pages/";
+        self::$_Redirect['STORAGE']     = $Backend . "storage/";
+        self::$_Redirect['BACK_CSS']    = $Backend . "css/";
+        self::$_Redirect['ADMIN_PAGES'] = $Backend . "AdminPages/";
     }
 
     public static function login()
@@ -26,9 +33,14 @@ final class App
         $_SESSION = [];
         if (ini_get('session.use_cookies')) {
             $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000,
-                $params['path'], $params['domain'],
-                $params['secure'], $params['httponly']
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params['path'],
+                $params['domain'],
+                $params['secure'],
+                $params['httponly']
             );
         }
         session_destroy();

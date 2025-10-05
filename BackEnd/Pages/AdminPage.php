@@ -1,7 +1,7 @@
 <?php
-include_once 'AppHandler.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';
 if (!App::$IsLoggedIn) {
-    header('Location: adminLogin.php');
+    header('Location:' . App::$_Redirect['PAGES'] . "adminLogin.php");
     exit;
 }
 
@@ -13,7 +13,7 @@ if (!App::$IsLoggedIn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="AdminPage.css">
+    <link rel="stylesheet" href="../css/AdminPage.css">
     <title>Poäng Jakt Admin</title>
 </head>
 
@@ -61,7 +61,7 @@ if (!App::$IsLoggedIn) {
                     // Wait for fade-out, then change src and fade-in
                     setTimeout(() => {
                         const page = folder.getAttribute("data-page");
-                        iframe.src = "AdminPages/" + page + ".php";
+                        iframe.src = "../AdminPages/" + page + ".php";
 
                         // Fade-in after content reloads
                         iframe.onload = () => {

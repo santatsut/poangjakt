@@ -2,46 +2,53 @@
     [
         {
             "Name": "Es",
-            "Poäng": 200
+            "Poäng": 2300
         },
         {
             "Name": "Te",
-            "Poäng": 200
+            "Poäng": 300
         }
     ],
     [
         {
-            "Uppgift": "Bygg en snögubbe",
+            "Uppgift": "asdasdasd",
             "lag": "Te",
             "Poäng": "100",
             "avklarad": true,
             "Checked": true
         },
         {
-            "Uppgift": "Bygg ett hus",
+            "Uppgift": "fdgdgfgfd",
             "lag": "Es",
             "Poäng": "100",
             "avklarad": true,
             "Checked": true
         },
         {
-            "Uppgift": "Gör 10000 armhävningar",
+            "Uppgift": "sadasdasdasdsad",
             "lag": "Te",
             "Poäng": "100",
+            "avklarad": false,
+            "Checked": false
+        },
+        {
+            "Uppgift": "jhgghjgjhjhghjg",
+            "lag": "Es",
+            "Poäng": "100",
+            "avklarad": false,
+            "Checked": false
+        },
+        {
+            "Uppgift": "Jag vill ha snö",
+            "lag": "Es",
+            "Poäng": "1000",
             "avklarad": true,
             "Checked": true
         },
         {
-            "Uppgift": "Bygg ett hus",
+            "Uppgift": "Jag vill ha snfgö",
             "lag": "Es",
-            "Poäng": "100",
-            "avklarad": true,
-            "Checked": true
-        },
-        {
-            "Uppgift": "Gör 10000 armhävningar",
-            "lag": "Es",
-            "Poäng": "100",
+            "Poäng": "1000",
             "avklarad": true,
             "Checked": true
         }

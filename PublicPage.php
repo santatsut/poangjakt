@@ -1,3 +1,5 @@
+<?php include_once './BackEnd/Handlers/AppHandler.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
 </head>
 
 <body>
-    <?php include_once './BackEnd/SetPoints.php'; ?>
+    <?php include_once APP::$_Redirect["FUNCTIONS"] . 'SetPoints.php'; ?>
 
     <div id="navbar">
         <img id="logoImage" src="./images/Logo_Black.svg" alt="">
@@ -17,10 +19,10 @@
     </div>
     <div id="content">
 
-        <?php include_once './BackEnd/Progress.php'; ?>
+        <?php include_once APP::$_Redirect["FUNCTIONS"] . 'Progress.php'; ?>
         
         <div id="bottomSide">
-            <?php include_once './BackEnd/Table.php'; ?>
+            <?php include_once APP::$_Redirect["FUNCTIONS"]. 'Table.php'; ?>
         </div>
     </div>
 </body>

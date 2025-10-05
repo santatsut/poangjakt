@@ -1,3 +1,3 @@
 <?php
 
-header('Location: ./BackEnd/AdminPage.php');
+header('Location: ./BackEnd/Pages/AdminPage.php');

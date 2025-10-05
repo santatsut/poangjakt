@@ -1,4 +1,3 @@
 <?php
-
-include_once './BackEnd/AppHandler.php';
-header("Location:".$_SERVER['HOME_PAGE']);
+include_once './BackEnd/Handlers/AppHandler.php';
+header("Location:".APP::$_Redirect['HOME_PAGE']);

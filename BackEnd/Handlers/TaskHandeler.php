@@ -1,11 +1,11 @@
 <?php
 // VERY TOP: no whitespace before this
-include_once 'AppHandler.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/BackEnd/Handlers/AppHandler.php';
 
 // Optional: start output buffering to prevent accidental output
 ob_start();
 
-$jsonFile = __DIR__ . '/data.json';
+$jsonFile = App::$_Redirect["STORAGE"] . 'data.json';
 $json = file_get_contents($jsonFile) ?: '[]';
 $List = json_decode($json, true) ?: [];
 
@@ -24,7 +24,7 @@ if (isset($_POST['done'])) {
     file_put_contents($jsonFile, json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
     // Redirect
-    header('Location: ' . App::$_Redirect['ADMIN_PAGE']);
+    header('Location: ' . $_SERVER['PHP_SELF']);
     exit;
 }
 

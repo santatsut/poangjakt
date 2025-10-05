@@ -1,6 +1,6 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';?>
 <?php
-
-$path = 'data.json';
+$path = APP::$_Redirect["STORAGE"].'/data.json';
 $json = file_get_contents($path) ?: '[]';
 $List = json_decode($json, true) ?: [];
 $Passed = false;
