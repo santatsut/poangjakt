@@ -1,4 +1,4 @@
-<?php include_once './BackEnd/Handlers/AppHandler.php';?>
+<?php include_once './BackEnd/Handlers/AppHandler.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +20,22 @@
     <div id="content">
 
         <?php include_once APP::$_Redirect["FUNCTIONS"] . 'Progress.php'; ?>
-        
+
         <div id="bottomSide">
-            <?php include_once APP::$_Redirect["FUNCTIONS"]. 'Table.php'; ?>
+            <?php include_once APP::$_Redirect["FUNCTIONS"] . 'Table.php'; ?>
         </div>
     </div>
 </body>
 
 </html>
+<script>
+    const td = document.querySelectorAll('.FormTd');
+    const th = document.querySelectorAll('.FormTh');
+    th.forEach(element => {
+        element.style.display = 'none';
+    });
+
+    td.forEach(element => {
+        element.style.display = 'none';
+    });
+</script>

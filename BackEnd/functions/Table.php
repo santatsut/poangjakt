@@ -5,7 +5,7 @@
     <th>Uppgift</th>
     <th>Poäng</th>
     <th>Lag</th>
-    <th></th> <!-- for Done button -->
+    <th class="FormTh"></th> <!-- for Done button -->
 </tr>
 <?php
 $jsonPath = APP::$_Redirect["STORAGE"].'/data.json';
