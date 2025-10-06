@@ -95,7 +95,45 @@ final class Accounts
         return false;
     }
 }
+final class DB
+{
+    public static $Data;
+    public static $DATA_PATH;
+
+    public static function init()
+    {
+        self::$DATA_PATH = APP::$_Redirect['STORAGE'].'/data.json';
+
+        self::loadData();
+    }
+
+
+    public static function setData(array $value)
+    {
+        self::$Data = $value;
+    }
+
+    public static function getData()
+    {
+        return self::$Data;
+    }
+
+    public static function loadData()
+    {
+        $json = file_get_contents(self::$DATA_PATH) ?: '[]';
+        self::$Data = json_decode($json, true) ?: [];
+    }
+    public static function WriteData(array $List)
+    {
+        $Encoded_Data = json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) ?: [];
+        $res = file_put_contents(self::$DATA_PATH, $Encoded_Data);
+        if ($res !== false) {
+            self::loadData();
+        }
+    }
+}
 
 // Initialize static data
 Accounts::init();
 App::init();
+DB::init();

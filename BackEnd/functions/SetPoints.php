@@ -1,9 +1,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';?>
 <?php
 
-$jsonPath = APP::$_Redirect["STORAGE"].'/data.json';
-$json = file_get_contents($jsonPath);
-$List = json_decode($json, true) ?: []; // decode as associative array
+
+$List = DB::getData();
 
 function GetValues(&$List, $type)
 {
@@ -35,4 +34,4 @@ if (isset($List[0][1]['Poäng'])) {
 }
 
 // Save back to file
-file_put_contents($jsonPath, json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+DB::WriteData($List);

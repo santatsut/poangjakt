@@ -1,8 +1,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';?>
 <?php
-$path = APP::$_Redirect["STORAGE"].'/data.json';
-$json = file_get_contents($path) ?: '[]';
-$List = json_decode($json, true) ?: [];
+
+$List = DB::getData();
 $Passed = false;
 if (isset($_POST['addTask'])) {
     $Task = [
@@ -22,7 +21,7 @@ if (isset($_POST['addTask'])) {
     }
     if ($Passed == true) {
         $List[1][] = $Task;
-        file_put_contents($path, json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        DB::WriteData($List);
     }else {
         echo "<h1>Task already exist</h1>";
     }

@@ -8,9 +8,7 @@
     <th class="FormTh"></th> <!-- for Done button -->
 </tr>
 <?php
-$jsonPath = APP::$_Redirect["STORAGE"].'/data.json';
-$json = file_get_contents($jsonPath);
-$List = json_decode($json, associative: true) ?: []; // decode as associative array
+$List = DB::getData();
 foreach ($List[1] as $row) {
     $style = !empty($row['avklarad']) ? 'text-decoration: line-through;' : '';
     echo '<tr id="Row" style="'.$style.'">';
