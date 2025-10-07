@@ -1,0 +1,84 @@
+.block {
+    background-color: var(--MainColor);
+    position: absolute;
+}
+
+#block1 {
+    top: 100px;
+    left: 0px;
+    width: 125px;
+    height: 75px;
+}
+
+#block2 {
+    top: 150px;
+    left: 0px;
+    width: 75px;
+    height: 100px;
+}
+
+#block3 {
+    top: 200px;
+    right: 0px;
+    width: 75px;
+    height: calc(100vh - 350px);
+}
+
+#block4 {
+    bottom: 0px;
+    right: 0px;
+    width: 35px;
+    height: 825px;
+}
+
+#block5 {
+    bottom: 75px;
+    left: 0px;
+    width: 75px;
+    height: 75px;
+}
+
+#block6 {
+    bottom: 0px;
+    left: 75px;
+    width: 75px;
+    height: 75px;
+}
+
+#block7 {
+    bottom: 125px;
+    left: 0px;
+    width: 35px;
+    height: 800px;
+}
+
+#block8 {
+    bottom: 0px;
+    right: 35px;
+    width: 100px;
+    height: 60px;
+}
+
+#block9 {
+    top: 60px;
+    left: 12vw;
+    width: 23vw;
+    height: 60px;
+    background-color: var(--SecColor);
+}
+
+#block10 {
+    top: 60px;
+    right:12vw;
+    width: 23vw;
+    height: 60px;
+    background-color: var(--SecColor);
+}
+
+#block11 {
+    top: 35vh;
+    right:40px;
+    width: 60px;
+    height: 35vh;
+    background-color: var(--SecColor);
+}

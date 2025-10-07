@@ -14,22 +14,28 @@ body{
 }
 #navbar {
     display: flex;
-    flex-direction: row;
+    position: relative;
     background-color: var(--MainColor);
     padding: 20px;
+    width: 100%;
     text-align: center;
     color: white;
     align-items: center;
+    justify-self: center;
 }
 
 #navbar h1 {
-    margin: 0 0 0 650px;
+    position: relative;
     background-color: yellow;
     padding: 10px 15px;
     color: #111111;
+    margin: auto;
 }
 
 #logoImage{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     height: 65px;
     width: 180px;
 }
@@ -43,6 +49,7 @@ body{
     width: 90%;
     margin: auto;
 }
+
 #leftSide, #rightSide {
     display: flex;
     flex-direction: column;
@@ -52,17 +59,17 @@ body{
     background-color: var(--MainColor);
     justify-content: center;
     align-items: center;
-    
+    z-index: 100;
 }
 
 #leftSide {
-    background-image: url(./images/Web.jpg);
+    background-image: url(../images/Web.jpg);
     background-position: center;
     background-size: cover;
 }
 
 #rightSide {
-    background-image: url(./images/Art.jpg);
+    background-image: url(../images/Art.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -75,6 +82,14 @@ body{
 
 #leftSide h1, #rightSide h1 {
     font-size: 9rem;
+}
+
+#leftSideInner, #rightSideInner {
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 #bottomSide {
