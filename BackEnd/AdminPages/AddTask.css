@@ -1,10 +1,18 @@
+body::webkit-scrollbar {
+    display: none;
+}
+
+#addTaskContainer {
+    overflow: hidden;
+}
 
 #TableForTasks {
     position: relative;
     top: 20px;
-    width: 50vw;
+    width: 100%;
     padding-bottom: 20px;
-    padding-top: 50px;
+    color: white;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 tr{
@@ -25,7 +33,7 @@ td{
 }
 
 #Row:hover{
-    background-color: var(--SecColor);
+    background-color: #111111;
     cursor: pointer;
 }
 
@@ -33,4 +41,53 @@ th {
     background-color: var(--SecColor);
     font-size: 1.5rem;
     font-weight:600;
+}
+
+#formToAddTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+}
+
+#formToAddTask input[type="text"] {
+    font-size: 12px;
+    border: none;
+    outline: none;
+    background-color: var(--MainColor);
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+#formToAddTask input[type="text"]::placeholder {
+    position: relative;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+#formToAddTask input[type="submit"], button {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 0 2px rgb(255, 255, 255);
+    background-color: var(--SecColor);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formToAddTask input[type="submit"]:hover, button:hover {
+    background-color: var(--MainColor);
+    box-shadow: 2px 2px 0 3px rgb(255, 255, 255);
+}
+
+#formToAddTask input[type="submit"]:active, button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0 4px rgb(255, 255, 255);
 }

@@ -114,9 +114,7 @@ aside{
     align-self: center;
     justify-content: center;
     align-items: center;
-
 }
-
 
 @keyframes fade {
     0%{opacity: 0;}100%{opacity: 1;}
@@ -128,7 +126,10 @@ aside{
     overflow-y: hidden;
     overflow-x: hidden;
     height: 600px;
+    
 }
+
+
 #contentFrame.hidden {
     opacity: 0;
     pointer-events: none;

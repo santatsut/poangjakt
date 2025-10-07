@@ -40,7 +40,7 @@ if (!App::$IsLoggedIn) {
  
            <div id="content">
             <div id="bottomSide">
-                <iframe scrolling="no" id="contentFrame" src="" frameborder="0"></iframe>
+                <iframe  id="contentFrame" src="" frameborder="0"></iframe>
             </div>
         </div>
 

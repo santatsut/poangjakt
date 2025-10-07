@@ -4,16 +4,15 @@ include_once App::$_Redirect["HANDLERS"] .'TaskHandeler.php';
 include_once App::$_Redirect["FUNCTIONS"] .'addTask.php';
 ?>
 
-<form method="post">
-    <input type="text" name="Uppgift" placeholder="Uppgift" required>
-    <input type="text" name="Poäng" placeholder="Poäng" required>
-    <input type="text" name="Lag" placeholder="Lag" required>
-    <input type="submit" name="addTask" value="Lägg Till Uppgift">
-</form>
-<link rel="stylesheet" href="AddTask.css">
-<?php include_once App::$_Redirect["FUNCTIONS"] .'Table.php'; ?>
+<html style="::webkit-scrollbar {display: none;}">
+    <div id="addTaskContainer">
+        <?php include_once App::$_Redirect["FUNCTIONS"] .'Table.php'; ?>
+        
+    </div>
+    <link rel="stylesheet" href="AddTask.css">
 
 <script src="../../../../index.js"></script>
 <script>
     loadForm()
 </script>
+</html>
