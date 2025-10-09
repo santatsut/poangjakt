@@ -11,81 +11,11 @@
     ],
     [
         {
-            "Uppgift": "asdasdasd",
-            "lag": "Te",
-            "Poäng": "100",
-            "avklarad": true,
-            "Checked": true
-        },
-        {
-            "Uppgift": "fdgdgfgfd",
-            "lag": "Es",
-            "Poäng": "100",
-            "avklarad": true,
-            "Checked": true
-        },
-        {
-            "Uppgift": "sadasdasdasdsad",
-            "lag": "Te",
-            "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "jhgghjgjhjhghjg",
-            "lag": "Es",
-            "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "Jag vill ha snö",
-            "lag": "Es",
-            "Poäng": "1000",
-            "avklarad": true,
-            "Checked": true
-        },
-        {
-            "Uppgift": "Jag vill ha snfgö",
-            "lag": "Es",
-            "Poäng": "1000",
-            "avklarad": true,
-            "Checked": true
-        },
-        {
-            "Uppgift": "asdf",
-            "lag": "asdf",
-            "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
             "Uppgift": "asdasd",
-            "lag": "Te",
+            "lag": "Es",
             "Poäng": "200",
             "avklarad": false,
             "Checked": false
-        },
-        {
-            "Uppgift": "asdfasdasdasdasdadaJJJJJJ",
-            "lag": "Te",
-            "Poäng": "100",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "asdf",
-            "lag": "Te",
-            "Poäng": "200",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "drick 5 shots, snurra runt 5 gånger och sparka en fotboll",
-            "lag": "Te",
-            "Poäng": "200",
-            "avklarad": true,
-            "Checked": true
         }
     ]
 ]
