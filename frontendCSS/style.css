@@ -95,9 +95,8 @@ body{
 #bottomSide {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-
     width: 90%;
     height: auto;
     max-height: 300px;
@@ -117,10 +116,8 @@ body{
 
 #TableForTasks {
     position: relative;
-    top: 75px;
     width: 50vw;
     padding-bottom: 20px;
-    padding-top: 50px;
 }
 
 tr{

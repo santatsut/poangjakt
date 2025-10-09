@@ -19,7 +19,7 @@
                 <input type="text" name="Lag" placeholder="Lag" required>
             </td>
             <td>
-                <input type="submit" name="addTask" value="Lägg Till Uppgift">
+                <input type="submit" name="addTask" value="Lägg Till">
             </td>
         </tr>
 <?php

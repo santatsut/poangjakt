@@ -6,7 +6,7 @@
         },
         {
             "Name": "Te",
-            "Poäng": 300
+            "Poäng": 500
         }
     ],
     [
@@ -79,6 +79,13 @@
             "Poäng": "200",
             "avklarad": false,
             "Checked": false
+        },
+        {
+            "Uppgift": "drick 5 shots, snurra runt 5 gånger och sparka en fotboll",
+            "lag": "Te",
+            "Poäng": "200",
+            "avklarad": true,
+            "Checked": true
         }
     ]
 ]
