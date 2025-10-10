@@ -73,6 +73,16 @@ class Account
     {
         return $this->Password;
     }
+
+    public function get_Encrypted_Password()
+    {
+        $Password = '';
+        for ($i = 0; $i < strlen($this->Password); ++$i) {
+            $Password .= '*';
+        }
+
+        return $Password;
+    }
 }
 
 final class Accounts
@@ -107,13 +117,14 @@ final class DB
     public static $Data;
     public static $DATA_PATH;
     public static $AdminAccountsPath;
-
+    public static $SuperPath;
     public static $AdminData;
 
     public static function init()
     {
         self::$DATA_PATH = APP::$_Redirect['STORAGE'].'/data.json';
         self::$AdminAccountsPath = APP::$_Redirect['STORAGE'].'/AdminAccounts.json';
+        self::$SuperPath = APP::$_Redirect['STORAGE'].'/SuperAdmin.json';
         self::loadData();
         self::loadAdminData();
     }
@@ -152,6 +163,22 @@ final class DB
     {
         $json = file_get_contents(self::$AdminAccountsPath) ?: '[]';
         self::$AdminData = json_decode($json, true) ?: [];
+    }
+
+    public static function _IsSuper(Account $account)
+    {
+        $json = file_get_contents(self::$SuperPath) ?: '[]';
+        $data = json_decode($json, true) ?: [];
+        foreach ($data as $acc) {
+            if (
+                $account->get_Username() === $acc['Username']
+                && $account->get_Password() === $acc['Password']
+            ) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static function WriteAdminData(array $List)
