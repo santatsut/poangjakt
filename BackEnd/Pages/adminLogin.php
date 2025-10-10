@@ -15,15 +15,16 @@ if (isset($_POST['submitAdmin'])) {
 <script src="/index.js"></script>
 
 <link rel="stylesheet" href="../css/Loginpage.css">
-<form method="post">
-    <h1>Login</h1>
-    <input type="text" name="username" placeholder="Enter username" required>
-    <input type="password" name="password" placeholder="Enter password" required>
-    <?php if (!empty($error)) {
-        echo "<p style='color:red;'>$error</p>";
-    } ?>
+<div id="loginContainer">
+    <form method="post" id="adminLoginForm">
+        <h1>Login</h1>
+        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <?php if (!empty($error)) {
+            echo "<p style='color:red;'>$error</p>";
+        } ?>
     <input submit type="submit" name="submitAdmin" value="SIGN IN">
-
 </form>
+</div>
 
 
