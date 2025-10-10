@@ -1,4 +1,5 @@
 <?php
+
 // Start session and output buffering
 session_start();
 ob_start();
@@ -11,15 +12,19 @@ final class App
     public static function init()
     {
         self::$IsLoggedIn = $_SESSION['IsLoggedIn'] ?? false;
-        $Backend = $_SERVER['DOCUMENT_ROOT'] . "/BackEnd/";
-        self::$_Redirect['ADMIN_PAGE']  = $Backend . "AdminPage.php";
-        self::$_Redirect['HOME_PAGE']   =  "/PublicPage.php";
-        self::$_Redirect['FUNCTIONS']   = $Backend . "functions/";
-        self::$_Redirect['HANDLERS']    = $Backend . "Handlers/";
-        self::$_Redirect['PAGES']       = $Backend . "Pages/";
-        self::$_Redirect['STORAGE']     = $Backend . "storage/";
-        self::$_Redirect['BACK_CSS']    = $Backend . "css/";
-        self::$_Redirect['ADMIN_PAGES'] = $Backend . "AdminPages/";
+
+        $Backend = $_SERVER['DOCUMENT_ROOT'].'/BackEnd/';
+
+        self::$_Redirect = [
+            'ADMIN_PAGE' => '/BackEnd/Pages/AdminPage.php',
+            'HOME_PAGE' => '/PublicPage.php',
+            'FUNCTIONS' => $Backend.'functions/',
+            'HANDLERS' => $Backend.'Handlers/',
+            'PAGES' => '/BackEnd/Pages/',
+            'STORAGE' => $Backend.'storage/',
+            'BACK_CSS' => $Backend.'css/',
+            'ADMIN_PAGES' => $Backend.'AdminPages/',
+        ];
     }
 
     public static function login()
@@ -72,14 +77,13 @@ class Account
 
 final class Accounts
 {
-    private static $accounts = [];
+    public static $accounts = [];
 
     public static function init()
     {
-        self::$accounts = [
-            new Account('adrian', 'TgX42&j!'),
-            new Account('Philart', '1234'),
-        ];
+        foreach (DB::getAdminData() as $account) {
+            self::$accounts[] = new Account($account['Username'], $account['Password']);
+        }
     }
 
     public static function checkAccount(Account $Account)
@@ -89,9 +93,12 @@ final class Accounts
                 $Account->get_Username() === $_ValidAccount->get_Username()
                 && $Account->get_Password() === $_ValidAccount->get_Password()
             ) {
+                $_SESSION['Logged_User'] = $Account;
+
                 return true;
             }
         }
+
         return false;
     }
 }
@@ -99,14 +106,17 @@ final class DB
 {
     public static $Data;
     public static $DATA_PATH;
+    public static $AdminAccountsPath;
+
+    public static $AdminData;
 
     public static function init()
     {
         self::$DATA_PATH = APP::$_Redirect['STORAGE'].'/data.json';
-
+        self::$AdminAccountsPath = APP::$_Redirect['STORAGE'].'/AdminAccounts.json';
         self::loadData();
+        self::loadAdminData();
     }
-
 
     public static function setData(array $value)
     {
@@ -118,11 +128,17 @@ final class DB
         return self::$Data;
     }
 
+    public static function getAdminData()
+    {
+        return self::$AdminData;
+    }
+
     public static function loadData()
     {
         $json = file_get_contents(self::$DATA_PATH) ?: '[]';
         self::$Data = json_decode($json, true) ?: [];
     }
+
     public static function WriteData(array $List)
     {
         $Encoded_Data = json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) ?: [];
@@ -131,9 +147,24 @@ final class DB
             self::loadData();
         }
     }
+
+    public static function loadAdminData()
+    {
+        $json = file_get_contents(self::$AdminAccountsPath) ?: '[]';
+        self::$AdminData = json_decode($json, true) ?: [];
+    }
+
+    public static function WriteAdminData(array $List)
+    {
+        $Encoded_Data = json_encode($List, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) ?: [];
+        $res = file_put_contents(self::$AdminAccountsPath, $Encoded_Data);
+        if ($res !== false) {
+            self::loadAdminData();
+        }
+    }
 }
 
 // Initialize static data
-Accounts::init();
 App::init();
 DB::init();
+Accounts::init();

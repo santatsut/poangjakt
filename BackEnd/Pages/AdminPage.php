@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';
 if (!App::$IsLoggedIn) {
-    header('Location:' . App::$_Redirect['PAGES'] . "adminLogin.php");
+    header('Location:'.App::$_Redirect['PAGES'].'adminLogin.php');
     exit;
 }
 
@@ -71,6 +71,46 @@ if (!App::$IsLoggedIn) {
                 });
             });
         });
+    </script>
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    var iframe = document.getElementById("contentFrame");
+
+    iframe.addEventListener("load", function () {
+        const iframeWindow = iframe.contentWindow;
+        const iframeDocument = iframe.contentDocument || iframeWindow.document;
+
+        // Now that iframe is loaded, access the table
+        var table = iframeDocument.getElementById("TableForTasks");
+
+        if (!table || !iframeWindow) {
+            console.error("Table or iframe not found.");
+            return;
+        }
+        let cells = table.querySelectorAll("tr");
+            cells.forEach((cell, index) => {
+                if (index < 4) {
+                        cell.classList.add("active");
+                }
+            });
+
+        iframeWindow.addEventListener("scroll", function () {
+            const scrollTop = iframeWindow.scrollY;
+
+            // Select all <td> elements inside the table
+            const cells = table.querySelectorAll("tr");
+            cells.forEach((cell, index) => {
+                if (scrollTop + 200 > index * 50 ) {
+                    cell.classList.add("active");
+                } else {
+                    cell.classList.remove("active");
+                }
+            });
+        });
+    });
+});
+
+
     </script>
 </body>
 
