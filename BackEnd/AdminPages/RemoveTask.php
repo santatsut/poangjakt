@@ -6,18 +6,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';
 <html>
 
 <head>
-    <style>
-        th{
-            color: white;
-        }
-        td {
-            color: white;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="RemoveTask.css">
 </head>
 
 <body>
@@ -35,7 +24,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/BackEnd/Handlers/AppHandler.php';
             });
         </script>
         <form action="" method="post">
-            <input type="text" name="TaskID" placeholder="Task name (Uppgift)" required>
+            <input type="text" name="TaskID" placeholder="ID" required>
             <button id="RemoveTask" type="submit" name="RemoveTaskSubmit">Remove Task</button>
         </form>
 

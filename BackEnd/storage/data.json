@@ -11,16 +11,9 @@
     ],
     [
         {
-            "Uppgift": "asdasd",
+            "Uppgift": "test",
             "lag": "Es",
             "Poäng": "200",
-            "avklarad": false,
-            "Checked": false
-        },
-        {
-            "Uppgift": "hello jag heter phille och jag testar något just nu",
-            "lag": "Te",
-            "Poäng": "100",
             "avklarad": false,
             "Checked": false
         }
